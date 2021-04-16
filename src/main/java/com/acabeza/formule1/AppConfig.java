@@ -20,18 +20,13 @@ public class AppConfig implements WebMvcConfigurer  {
 	@Autowired
 	private ApplicationContext applicationContext;
 	
-	@Override
-	public void addResourceHandlers (ResourceHandlerRegistry registry) {
-		registry.addResourceHandler("/files/**")
-				.addResourceLocations("/WEB-INF/pdf/");
-	}
-	
+
 	@Bean
 	@Description("Thymeleaf Template Resolver")
 	public SpringResourceTemplateResolver templateResolver() {
 		SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
 		templateResolver.setApplicationContext(applicationContext);
-	    templateResolver.setPrefix("/WEB-INF/views/");
+//	    templateResolver.setPrefix("/WEB-INF/views/");
 	    templateResolver.setSuffix(".html");
 //	    templateResolver.setTemplateMode("HTML5");
 	    return templateResolver;
@@ -55,27 +50,5 @@ public class AppConfig implements WebMvcConfigurer  {
 		return viewResolver;
 	}
 
-	@Bean
-//	The th:text=”#{key}” tag attribute can be used to display values from property files.
-//	For this to work the property file must be configured as messageSource bean:
-//	messages.properties file is hiervoor toegevoegd
-	@Description("Spring Message Resolver")
-	public ResourceBundleMessageSource messageSource() {
-	    ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
-	    messageSource.setBasename("messages");  // messages.properties is naam van de file
-	    return messageSource;
-	}	
-	
-	@Bean
-	@Description("JSP View Resolver")
-	public ViewResolver viewResolver() {
-		InternalResourceViewResolver bean = new InternalResourceViewResolver();
-		bean.setPrefix("/WEB-INF/jsp/");
-		bean.setSuffix(".jsp");
-		bean.setOrder(1); // niet meer actief
-		return bean;
-	}
-
-	
 	
 }
