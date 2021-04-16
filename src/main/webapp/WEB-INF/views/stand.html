@@ -9,9 +9,9 @@
 	
 	<h1>Stand:</h1>
 	<div th:each="instance, itrStat :  ${stand}">
-		<h1 th:text="|${itrStat.index + 1}. ${instance.key} : ${instance.value}|">nomor urut</h1>
+		<h2 th:text="|${itrStat.index + 1}. ${instance.key} : ${instance.value}|">nomor urut</h2>
 	</div>
 
-
+	<div th:insert="template.html :: footer"> </div>
 </body>
 </html>

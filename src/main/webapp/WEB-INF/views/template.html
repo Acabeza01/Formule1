@@ -2,39 +2,34 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:fragment="headerfiles">
 	<meta charset="UTF-8">
-<!-- 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"> -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
 	<style>
 	body {
-	  background-color: linen;
 	  margin: 10px; 
 	  padding: 10px;
-	}
-	
-	h1 {
-	  color: maroon;
 	  margin-left: 40px;
+ 
 	}
-	
-	.plaatje  {
-		 width:100%;
-		 height:200px; /* height of the background image? */
-		 background:url(images.jpg) repeat-x 0 0;
-		 text-align:center;
-		}
-		
 	</style>
 	<title>F1 Spel</title>
 
 </head>
 <body>
-	<div class="plaatje"><img src="images.jpg" alt="logo" /></div>
-    <div th:fragment="menu">
-		<h1>Formule1 Spel 2021</h1>
- 		<a href="start">Home</a>	
-		<a href="stand">Stand</a>	
-		<a href="teams">Teams</a>
+	<div class="hero-image">test</div>
+	
+    <div class="menu" th:fragment="menu">
+		<p class="h1">Formule1 Spel 2021</p>
+		<h2>
+	 		<a href="start">Coureurs</a>	
+			<a href="stand">Poule</a>	
+			<a href="teams">Teams</a>
+		</h2>
 	</div>
 	
-	<a href="https://www.onlinewedden.com/formule-1-gids/formule-1-stand">Bron</a>
+
+	<div th:fragment="footer">
+		<br>
+		<h3><a href="https://www.onlinewedden.com/formule-1-gids/formule-1-stand" target="_blank">Externe Bron</a></h3>	
+	</div>
 </body>
 </html>

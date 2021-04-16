@@ -9,11 +9,11 @@
 	
 	<h1>Teams:</h1>
 	<div th:each="instance:  ${teams}">
-		<h1 th:text="${instance.naam}">nomor urut</h1>
+		<h2 th:text="${instance.naam}">nomor urut</h2>
 			<div th:each="coureurs, itrStat :  ${instance.coureurs}">
-				<h1 th:text="|${itrStat.index + 1}. ${coureurs.key} : ${coureurs.value}|">nomor urut</h1>
+				<h3 th:text="|${itrStat.index + 1}. ${coureurs.key} : ${coureurs.value}|">nomor urut</h3>
 			</div>		
 	</div>
-
+	<div th:insert="template.html :: footer"> </div>
 </body>
 </html>
