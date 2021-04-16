@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<th:block th:include="template.html :: headerfiles">  </th:block>	
+</head>
+<body>
+	<div th:insert="template.html :: menu"> </div>
+	
+	<h2>Teams:</h2>
+	<div th:each="instance:  ${teams}">
+		<h2 th:text="${instance.naam}">nomor urut</h2>
+			<div th:each="coureurs, itrStat :  ${instance.coureurs}">
+				<h3 th:text="|${itrStat.index + 1}. ${coureurs.key} : ${coureurs.value}|">nomor urut</h3>
+			</div>		
+	</div>
+
+</body>
+</html>
