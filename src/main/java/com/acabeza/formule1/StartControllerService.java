@@ -26,15 +26,21 @@ public class StartControllerService {
 	private static final Logger log = LoggerFactory.getLogger(Formule1Application.class);	
 	private static final SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMM HH:mm:ss");	
 	
-	@GetMapping({"/", "/start"})
+	@GetMapping("/")
+	public String home (Model model) throws Exception {
+		
+		return "home";
+	}
+
+	@GetMapping("/start")
 	public String start (Model model) throws Exception {
 		
 		Map<String, Integer> start = inlezenStand();
 		model.addAttribute("start", start);
 		
 		return "start";
-	}
-
+	}	
+	
 	  public Map<String, Integer> inlezenStand() throws Exception {
 		  
 		  	log.info("InlezenKansen started - the time is now {}", dateFormat.format(new Date()));
