@@ -1,0 +1,1 @@
+web: java -jar target/formule1-0.0.1-SNAPSHOT.jar
