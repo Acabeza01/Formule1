@@ -7,9 +7,9 @@
 <body>
 	<div th:insert="template.html :: menu"> </div>
 	
-	<h2>Stand:</h2>
+	<h1>Stand:</h1>
 	<div th:each="instance, itrStat :  ${stand}">
-		<h3 th:text="|${itrStat.index + 1}. ${instance.key} : ${instance.value}|">nomor urut</h3>
+		<h1 th:text="|${itrStat.index + 1}. ${instance.key} : ${instance.value}|">nomor urut</h1>
 	</div>
 
 
