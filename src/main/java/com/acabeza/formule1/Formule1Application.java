@@ -38,16 +38,16 @@ public class Formule1Application {
 		SpringApplication.run(Formule1Application.class, args);
 	}
 
-	  @Bean
-	  public CommandLineRunner Run() {
-		  
-	    return (args) -> {
-
-	    	log.info("F1 Spel started - the time is now {}", dateFormat.format(new Date()));
-    	
-	    	
-	    };
-	  }
+//	  @Bean
+//	  public CommandLineRunner Run() {
+//		  
+//	    return (args) -> {
+//
+//	    	log.info("F1 Spel started - the time is now {}", dateFormat.format(new Date()));
+//    	
+//	    	
+//	    };
+//	  }
 	  
 
 	  
