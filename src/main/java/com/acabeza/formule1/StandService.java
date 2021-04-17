@@ -36,7 +36,6 @@ public class StandService {
 	    public static Team rick;
 	    public static Team thijs;
 	    
-	    
 	    public Map<String, Integer> bepaalStand() throws Exception {
 	    	log.info("bepaalStand() started");
 	      

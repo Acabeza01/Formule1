@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<th:block th:include="template.html :: headerfiles">  </th:block>	
+</head>
+<body>
+	<div th:insert="template.html :: menu"> </div>
+	<br>
+	<h1>LiveStand:</h1>
+	<br>
+	<div class="container" th:each="instance, itrStat :  ${stand}">
+		<div class="row h2">
+			<div class="col-1" th:text="| ${itrStat.index + 1}. |">text</div>
+			<div class="col-2" th:text="${instance.key}">nomor urut</div>
+			<div class="col-1" th:text="${instance.value}">nomor urut</div>
+		</div>
+	</div>
+
+	<div th:insert="template.html :: footer"> </div>
+</body>
+</html>
