@@ -42,7 +42,7 @@ public class StartControllerService {
 			
 		  	String url = "https://www.onlinewedden.com/formule-1-gids/formule-1-stand";
 		    
-			    Document doc = Jsoup.connect(url).get();
+			Document doc = Jsoup.connect(url).get();
 			
 		    Elements coureurs = doc.select(".column-2");
 		    Elements punten = doc.select(".column-4");

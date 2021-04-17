@@ -8,17 +8,45 @@
 	  margin: 10px; 
 	  padding: 10px;
 	  margin-left: 40px;
+
+	  background-image: url("background.jpg");
+	  background-position: center;
+	  background-repeat: repeat;
+	  background-size: cover;
+	  
+
+	
+	  /* Needed to position the navbar */
+	  position: relative;
  
+	}
+	.bg-img {
+	  /* The image used */
+	  background-image: url("header.jpg");
+	
+	  color: white;
+	
+	  /* Center and scale the image nicely */
+	  background-position: center;
+	  background-repeat: no-repeat;
+	  background-size: cover;
+	  height: 187px;
+
+
 	}
 	</style>
 	<title>F1 Spel</title>
 
 </head>
 <body>
-	<div class="hero-image">test</div>
+
 	
     <div class="menu" th:fragment="menu">
-		<p class="h1">Formule1 Spel 2021</p>
+		 <div class="bg-img">
+		 		<p class="h1">Formule1 Spel 2021</p>		 
+		</div> 
+
+
 		<h2>
 	 		<a href="start">Coureurs</a>	
 			<a href="stand">Poule</a>	
