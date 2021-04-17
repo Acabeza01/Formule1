@@ -2,12 +2,11 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:fragment="headerfiles">
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-	<style>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">	<style>
 	body {
 	  margin: 10px; 
 	  padding: 10px;
-	  margin-left: 40px;
+	  margin-left: 50px;
 
 	  background-image: url("background.jpg");
 	  background-position: center;
@@ -30,7 +29,7 @@
 	  background-position: center;
 	  background-repeat: no-repeat;
 	  background-size: cover;
-	  height: 187px;
+	  height: 300px;
 
 
 	}
@@ -42,16 +41,15 @@
 
 	
     <div class="menu" th:fragment="menu">
-		 <div class="bg-img">
-		 		<p class="h1">Formule1 Spel 2021</p>		 
+		<div class="bg-img">
+		 		<p class="h1"> Formule1 Spel 2021</p>		 
 		</div> 
-
-
-		<h2>
-	 		<a href="start">Coureurs</a>	
-			<a href="stand">Poule</a>	
-			<a href="teams">Teams</a>
-		</h2>
+		<br>
+		<div class="nav nav-tabs h2">
+			<a href="start" class="nav-item badge badge-dark">Coureurs</a>
+			<a href="stand" class="nav-item badge badge-dark">Poule</a>
+			<a href="teams" class="nav-item badge badge-dark">Teams</a>
+		</div>	
 	</div>
 	
 

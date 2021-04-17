@@ -1,21 +1,32 @@
 package com.acabeza.formule1;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class StandService {
+	
+	@Autowired
+	StartService startService;
 	
 		private static final Logger log = LoggerFactory.getLogger(StartControllerService.class);	 
 	    private static final SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMM HH:mm:ss");
@@ -30,22 +41,20 @@ public class StandService {
 	    	log.info("bepaalStand() started");
 	      
 	      List<String> coureursArjan = Arrays.asList("Verstappen", "Perez", "Ricciardo", "Schumacher");
-	      Map<String,Integer> lijstArjan = new HashMap<String, Integer>(StartControllerService.stand);
+	      Map<String,Integer> lijstArjan = new HashMap<String, Integer>(startService.stand);
 	      lijstArjan.keySet().retainAll(coureursArjan);
 
 	      List<String> coureursBram = Arrays.asList("Hamilton", "Norris", "Gasly", "Tsunoda");
-	      Map<String,Integer> lijstBram = new HashMap<String, Integer>(StartControllerService.stand);
+	      Map<String,Integer> lijstBram = new HashMap<String, Integer>(startService.stand);
 	      lijstBram.keySet().retainAll(coureursBram);
 	      
 	      List<String> coureursRick = Arrays.asList("Hamilton", "Perez", "Stroll", "Latifi");
-	      Map<String,Integer> lijstRick = new HashMap<String, Integer>(StartControllerService.stand);
+	      Map<String,Integer> lijstRick = new HashMap<String, Integer>(startService.stand);
 	      lijstRick.keySet().retainAll(coureursRick);	      
 	      
 	      List<String> coureursThijs = Arrays.asList("Hamilton", "Ricciardo", "Norris", "Schumacher");
-	      Map<String,Integer> lijstThijs = new HashMap<String, Integer>(StartControllerService.stand);
+	      Map<String,Integer> lijstThijs = new HashMap<String, Integer>(startService.stand);
 	      lijstThijs.keySet().retainAll(coureursThijs);	      
-
-	      
 	      
 	      arjan = new Team("Arjan", sortByValue(lijstArjan));
 	      bram = new Team("Bram", sortByValue(lijstBram));
@@ -57,10 +66,6 @@ public class StandService {
 	      totaal.put("Bram", lijstBram.values().stream().reduce(0, Integer::sum));
 	      totaal.put("Rick", lijstRick.values().stream().reduce(0, Integer::sum));
 	      totaal.put("Thijs", lijstThijs.values().stream().reduce(0, Integer::sum));
-
-	      lijstArjan.entrySet()
-	      .stream()
-	      .sorted((Map.Entry.comparingByValue(Comparator.reverseOrder())));	      
 
 	      totaal = sortByValue(totaal);
 	      
@@ -80,8 +85,6 @@ public class StandService {
 
 	        return result;
 	    }
-	
-	
 	
 	
 

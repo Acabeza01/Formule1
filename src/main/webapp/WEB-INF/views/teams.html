@@ -8,12 +8,18 @@
 	<div th:insert="template.html :: menu"> </div>
 	
 	<h1>Teams:</h1>
-	<div th:each="instance:  ${teams}">
-		<h2 th:text="${instance.naam}">nomor urut</h2>
-			<div th:each="coureurs, itrStat :  ${instance.coureurs}">
-				<h3 th:text="|${itrStat.index + 1}. ${coureurs.key} : ${coureurs.value}|">nomor urut</h3>
-			</div>		
+	
+	<div class="container" th:each="instance:  ${teams}">
+	
+		<div class="h2 font-weight-bold" th:text="${instance.naam}">nomor urut> </div>	
+		
+		<div class="row h3" th:each="coureurs, itrStat :  ${instance.coureurs}">
+			<div class="col-1" th:text="| ${itrStat.index + 1}. |">text</div>
+			<div class="col-2" th:text="${coureurs.key}">nomor urut</div>
+			<div class="col-1" th:text="${coureurs.value}">nomor urut</div>
+		</div>
 	</div>
+	
 	<div th:insert="template.html :: footer"> </div>
 </body>
 </html>

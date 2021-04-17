@@ -8,8 +8,12 @@
 	<div th:insert="template.html :: menu"> </div>
 	
 	<h1>Stand:</h1>
-	<div th:each="instance, itrStat :  ${stand}">
-		<h2 th:text="|${itrStat.index + 1}. ${instance.key} : ${instance.value}|">nomor urut</h2>
+	<div class="container" th:each="instance, itrStat :  ${stand}">
+		<div class="row h2">
+			<div class="col-1" th:text="| ${itrStat.index + 1}. |">text</div>
+			<div class="col-2" th:text="${instance.key}">nomor urut</div>
+			<div class="col-1" th:text="${instance.value}">nomor urut</div>
+		</div>
 	</div>
 
 	<div th:insert="template.html :: footer"> </div>

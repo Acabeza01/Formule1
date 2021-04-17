@@ -1,5 +1,10 @@
 package com.acabeza.formule1;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -24,9 +29,6 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class Formule1Application {
 	
-	@Autowired
-	StandService standService;
-	
 
 	private static final Logger log = LoggerFactory.getLogger(Formule1Application.class);	 
     private static final SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMM HH:mm:ss");	
@@ -38,17 +40,15 @@ public class Formule1Application {
 		SpringApplication.run(Formule1Application.class, args);
 	}
 
-//	  @Bean
-//	  public CommandLineRunner Run() {
-//		  
-//	    return (args) -> {
-//
-//	    	log.info("F1 Spel started - the time is now {}", dateFormat.format(new Date()));
-//    	
-//	    	
-//	    };
-//	  }
-	  
+	  @Bean
+	  public CommandLineRunner Run() {
+		  
+	    return (args) -> {
 
+	    	log.info("F1 Spel started - the time is now {}", dateFormat.format(new Date()));
+
+	    };
+	  }
+	  
 	  
 }
