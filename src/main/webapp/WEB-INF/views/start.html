@@ -12,7 +12,7 @@
 	<div class="container" th:each="instance, itrStat :  ${start}">
 		<div class="row h2">
 			<div class="col-1" th:text="| ${itrStat.index + 1}. |">text</div>
-			<div class="col-3" th:text="${instance.key}">nomor urut</div>
+			<div class="col-4" th:text="${instance.key}">nomor urut</div>
 			<div class="col-1" th:text="${instance.value}">nomor urut</div>
 		</div>
 	</div>	

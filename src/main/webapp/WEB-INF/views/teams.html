@@ -15,7 +15,7 @@
 		
 		<div class="row h3" th:each="coureurs, itrStat :  ${instance.coureurs}">
 			<div class="col-1" th:text="| ${itrStat.index + 1}. |">text</div>
-			<div class="col-2" th:text="${coureurs.key}">nomor urut</div>
+			<div class="col-4" th:text="${coureurs.key}">nomor urut</div>
 			<div class="col-1" th:text="${coureurs.value}">nomor urut</div>
 		</div>
 	</div>
