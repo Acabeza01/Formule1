@@ -84,7 +84,13 @@ public class LiveService {
 			    try {
 					Document doc = Jsoup.connect(url).get();
 					
-				    Elements coureurs = doc.select("span.yellow");
+				    Elements geel = doc.select("span.yellow");
+				    Elements cyan = doc.select("span.cyan");
+				    Elements coureurs = cyan;
+				    
+				    if (cyan.size() < 5) {
+				    	coureurs = geel;
+				    } 
 				    
 				    final int start = 4;
 				    for (int i=start; i<(10+start); i++) {

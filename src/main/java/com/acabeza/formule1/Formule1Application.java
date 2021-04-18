@@ -28,13 +28,11 @@ import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class Formule1Application {
-	
 
 	private static final Logger log = LoggerFactory.getLogger(Formule1Application.class);	 
     private static final SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMM HH:mm:ss");	
 	
     public static Team teams[] = new Team[4];
-
     
 	public static void main(String[] args) {
 		SpringApplication.run(Formule1Application.class, args);
@@ -47,6 +45,8 @@ public class Formule1Application {
 
 	    	log.info("F1 Spel started - the time is now {}", dateFormat.format(new Date()));
 
+    	
+	    	
 	    };
 	  }
 	  

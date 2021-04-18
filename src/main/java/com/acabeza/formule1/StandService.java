@@ -30,11 +30,11 @@ public class StandService {
 	
 		private static final Logger log = LoggerFactory.getLogger(StartControllerService.class);	 
 	    private static final SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMM HH:mm:ss");
-	    
+
 	    public static Team arjan;
 	    public static Team bram;
 	    public static Team rick;
-	    public static Team thijs;
+	    public static Team thijs;		    
 	    
 	    public Map<String, Integer> bepaalStand() throws Exception {
 	    	log.info("bepaalStand() started");
