@@ -12,7 +12,7 @@ public class LiveController {
 	@Autowired
 	private LiveService liveService;
 	
-	@GetMapping({"/live"})
+//	@GetMapping({"/live"})
 	public String live (Model model) throws Exception {
 		
 		Map<String, Integer> stand = liveService.live();
